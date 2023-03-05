@@ -1,0 +1,32 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+
+- task: DownloadSecureFile@1
+  name: mySecureFile
+  displayName: 'Download secure file'
+  inputs:
+    secureFile: 'txt.txt'
+
+- task: DownloadSecureFile@1
+  name: mySecureFile1
+  displayName: 'Download secure file'
+  inputs:
+    secureFile: 'txt1.txt'
+
+- task: AppdomeAPI1@0
+  inputs:
+    samplestring: 'diff input'
+    fileInput: '$(mySecureFile.secureFilePath)'
+- task: AppdomeAPI@0
+  inputs:
+    samplestring: 'just input'
