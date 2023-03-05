@@ -11,9 +11,8 @@ trigger:
 
 steps:
 - script: 
-    ls "/home/vsts/work/_tasks";
+    ls "/home/vsts/work/_tasks/AppdomeAPI1_9cbb38fd-cd15-4eb6-8316-1e369dce9504;
     echo "blah";
-    ls "/home/vsts/work/_temp";
 - task: DownloadSecureFile@1
   name: mySecureFile
   displayName: 'Download secure file'
