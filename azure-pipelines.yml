@@ -11,8 +11,9 @@ trigger:
 
 steps:
 - script: 
-    ls "/home/vsts/work/_tasks"
-    ls "/home/vsts/work/_temp"
+    ls "/home/vsts/work/_tasks";
+    echo "blah";
+    ls "/home/vsts/work/_temp";
 - task: DownloadSecureFile@1
   name: mySecureFile
   displayName: 'Download secure file'
