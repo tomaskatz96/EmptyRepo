@@ -2,6 +2,8 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
+variables:
+- group: Appdome
 
 trigger:
 - main
@@ -13,7 +15,7 @@ steps:
 - script: 
     ls "/home/vsts/work/_tasks/AppdomeAPI_badcce77-7016-461b-a6ee-8b911cdb7925/0.1.2/";
     echo "---------------------------------------------------";
-
+    echo $[variables.Token]
 
 - task: DownloadSecureFile@1
   name: mySecureFile
