@@ -25,10 +25,6 @@ steps:
   inputs:
     secureFile: 'txt1.txt'
 
-- task: AppdomeAPI1@0
-  inputs:
-    samplestring: 'diff input'
-    fileInput: '$(mySecureFile.secureFilePath)'
 - task: AppdomeAPI@0
   inputs:
     samplestring: 'just input'
