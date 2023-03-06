@@ -15,9 +15,9 @@ steps:
     echo "---------------------------------------------------";
     ls "/home/vsts/work/_tasks/";
     echo "---------------------------------------------------";
-    ls "/home/vsts/work/";
+    ls "/home/vsts/work/1";
     echo "---------------------------------------------------";
-    ls "$(System.DefaultWorkingDirectory)";
+    ls "/home/vsts/work/_temp/";
 
 
 - task: DownloadSecureFile@1
