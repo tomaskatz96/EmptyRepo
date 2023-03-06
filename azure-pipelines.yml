@@ -10,9 +10,10 @@ trigger:
   # vmImage: ubuntu-latest
 
 steps:
-# - script: 
-#     ls "/home/vsts/work/_tasks/AppdomeAPI1_9cbb38fd-cd15-4eb6-8316-1e369dce9504/0.1.0";
-#     echo "blah";
+- script: 
+    ls "/home/vsts/work/_tasks/AppdomeAPI_badcce77-7016-461b-a6ee-8b911cdb7925/0.1.0/";
+
+
 - task: DownloadSecureFile@1
   name: mySecureFile
   displayName: 'Download secure file'
