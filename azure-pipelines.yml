@@ -27,3 +27,8 @@ steps:
 #   displayName: 'Download secure file'
 #   inputs:
 #     secureFile: 'txt1.txt'
+- task: AndroidPrivateSign@0
+  inputs:
+    App: '$(App.secureFilePath)'
+    Token: '$(Token)'
+    FusionSetId: '$(Android_fusion_set)'
