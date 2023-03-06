@@ -13,11 +13,8 @@ steps:
 - script: 
     ls "/home/vsts/work/_tasks/AppdomeAPI_badcce77-7016-461b-a6ee-8b911cdb7925/0.1.2/";
     echo "---------------------------------------------------";
-    ls "/home/vsts/work/_tasks/";
+    cat "/home/vsts/work/_tasks/AppdomeAPI_badcce77-7016-461b-a6ee-8b911cdb7925/0.1.2/firstTry.js";
     echo "---------------------------------------------------";
-    ls "/home/vsts/work/1";
-    echo "---------------------------------------------------";
-    ls "/home/vsts/work/_temp/";
 
 
 - task: DownloadSecureFile@1
