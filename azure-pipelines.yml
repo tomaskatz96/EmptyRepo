@@ -11,7 +11,11 @@ trigger:
 
 steps:
 - script: 
-    cat "/home/vsts/work/_tasks/AppdomeAPI_badcce77-7016-461b-a6ee-8b911cdb7925/0.1.0/task.json";
+    ls "/home/vsts/work/_tasks/AppdomeAPI_badcce77-7016-461b-a6ee-8b911cdb7925/0.1.0/";
+    echo "---------------------------------------------------";
+    ls "/home/vsts/work/_tasks/AppdomeAPI_badcce77-7016-461b-a6ee-8b911cdb7925/";
+    echo "---------------------------------------------------";
+    ls "/home/vsts/work/_tasks/";
 
 
 - task: DownloadSecureFile@1
@@ -26,6 +30,6 @@ steps:
   inputs:
     secureFile: 'txt1.txt'
 
-- task: AppdomeAPI@0
-  inputs:
-    samplestring: 'gfdgdf'
+# - task: AppdomeAPI@0
+#   inputs:
+#     samplestring: 'gfdgdf'
