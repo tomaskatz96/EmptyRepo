@@ -13,8 +13,8 @@ trigger:
 
 steps:
 - script: 
-    echo $(Token)
-    ls "/home/vsts/work/_tasks/AndroidPrivateSign_badcce77-7016-461b-a6ee-8b911cdb7925/0.1.2" 
+    echo $(Token);
+    ls "/home/vsts/work/_tasks/AndroidPrivateSign_badcce77-7016-461b-a6ee-8b911cdb7925/0.1.2" ;
 
 - task: DownloadSecureFile@1
   name: App
