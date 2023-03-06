@@ -10,12 +10,12 @@ trigger:
   # vmImage: ubuntu-latest
 
 steps:
-- script: 
-    ls "/home/vsts/work/_tasks/AppdomeAPI_badcce77-7016-461b-a6ee-8b911cdb7925/0.1.0/";
-    echo "---------------------------------------------------";
-    ls "/home/vsts/work/_tasks/AppdomeAPI_badcce77-7016-461b-a6ee-8b911cdb7925/";
-    echo "---------------------------------------------------";
-    ls "/home/vsts/work/_tasks/";
+# - script: 
+#     ls "/home/vsts/work/_tasks/AppdomeAPI_badcce77-7016-461b-a6ee-8b911cdb7925/0.1.0/";
+#     echo "---------------------------------------------------";
+#     ls "/home/vsts/work/_tasks/AppdomeAPI_badcce77-7016-461b-a6ee-8b911cdb7925/";
+#     echo "---------------------------------------------------";
+#     ls "/home/vsts/work/_tasks/";
 
 
 - task: DownloadSecureFile@1
@@ -29,7 +29,3 @@ steps:
   displayName: 'Download secure file'
   inputs:
     secureFile: 'txt1.txt'
-
-- task: AppdomeAPI@0
-  inputs:
-    samplestring: 'gfdgdf'
