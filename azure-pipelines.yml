@@ -29,11 +29,10 @@ steps:
   displayName: 'Download secure file'
   inputs:
     secureFile: 'txt1.txt'
-
-- task: AppdomeAPI@0
-  inputs:
-    samplestring: 'csacsacs'
 - task: AppdomeAPI1@0
   inputs:
     samplestring: 'dsdsada'
     fileInput: '$(mySecureFile. secureFilePath)'
+- task: AppdomeAPI@0
+  inputs:
+    samplestring: 'csacsacs'
