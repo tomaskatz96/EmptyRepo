@@ -13,27 +13,16 @@ trigger:
 
 steps:
 - script: 
-    ls "/home/vsts/work/_tasks/AppdomeAPI_badcce77-7016-461b-a6ee-8b911cdb7925/0.1.2/";
-    echo "---------------------------------------------------";
-    echo $[variables.Token]
+    echo $(Token)
 
-- task: DownloadSecureFile@1
-  name: mySecureFile
-  displayName: 'Download secure file'
-  inputs:
-    secureFile: 'txt.txt'
+# - task: DownloadSecureFile@1
+#   name: mySecureFile
+#   displayName: 'Download secure file'
+#   inputs:
+#     secureFile: 'txt.txt'
 
-- task: DownloadSecureFile@1
-  name: mySecureFile1
-  displayName: 'Download secure file'
-  inputs:
-    secureFile: 'txt1.txt'
-
-
-- task: AppdomeAPI1@0
-  inputs:
-    samplestring: 'dgdfgdf'
-    fileInput: '$(mySecureFile.secureFilePath)'
-- task: AppdomeAPI@0
-  inputs:
-    samplestring: 'gnfgf'
+# - task: DownloadSecureFile@1
+#   name: mySecureFile1
+#   displayName: 'Download secure file'
+#   inputs:
+#     secureFile: 'txt1.txt'
