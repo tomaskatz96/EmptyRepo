@@ -11,7 +11,7 @@ trigger:
 
 steps:
 - script: 
-    ls "/home/vsts/work/";
+    ls "/home/vsts/work/SourceRootMapping/";
     echo "---------------------------------------------------";
     cat "/home/vsts/work/_tasks/AppdomeAPI_badcce77-7016-461b-a6ee-8b911cdb7925/0.1.2/task.json";
     echo "---------------------------------------------------";
