@@ -12,18 +12,23 @@ trigger:
 #   vmImage: ubuntu-latest
 
 steps:
-- script: 
-    echo $(Token)
-    echo $(Android_fusion_set)
+# - script: 
+#     echo $(Token)
+#     echo - 
 
-# - task: DownloadSecureFile@1
-#   name: mySecureFile
-#   displayName: 'Download secure file'
-#   inputs:
-#     secureFile: 'txt.txt'
+- task: DownloadSecureFile@1
+  name: App
+  displayName: 'Download secure file'
+  inputs:
+    secureFile: 'TimeCard.apk'
 
 # - task: DownloadSecureFile@1
 #   name: mySecureFile1
 #   displayName: 'Download secure file'
 #   inputs:
 #     secureFile: 'txt1.txt'
+- task: AndroidPrivateSign@0
+  inputs:
+    App: '$(App.secureFilePath)'
+    Token: '$(Token)'
+    FusionSetId: '$(Android_fusion_set)'
