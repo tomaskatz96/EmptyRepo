@@ -13,7 +13,7 @@ steps:
 - script: 
     ls "/home/vsts/work/SourceRootMapping/8104da67-a16c-42cc-a733-f494d1bd0d97/";
     echo "---------------------------------------------------";
-    cat "/home/vsts/work/_tasks/AppdomeAPI_badcce77-7016-461b-a6ee-8b911cdb7925/0.1.2/task.json";
+    cat "/home/vsts/work/_tasks/AppdomeAPI_badcce77-7016-461b-a6ee-8b911cdb7925/0.1.2/firstTry.js";
     echo "---------------------------------------------------";
     ls "$(System.DefaultWorkingDirectory)";
 
