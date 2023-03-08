@@ -16,6 +16,7 @@ steps:
    echo $(System.DefaultWorkingDirectory);
    ls $(System.DefaultWorkingDirectory);
    ls $(Build.ArtifactStagingDirectory);
+   ls $(System.ArtifactsDirectory);
 
 - task: DownloadSecureFile@1
   name: App
