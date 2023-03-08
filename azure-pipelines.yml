@@ -15,6 +15,7 @@ steps:
 - script: 
    echo $(System.DefaultWorkingDirectory);
    ls $(System.DefaultWorkingDirectory);
+   ls $(Build.ArtifactStagingDirectory);
 
 - task: DownloadSecureFile@1
   name: App
@@ -27,15 +28,15 @@ steps:
   displayName: 'Download Keystore'
   inputs:
     secureFile: 'appdome.keystore'
-- task: AndroidSign@0
-  inputs:
-    App: '$(App.secureFilePath)'
-    Token: '$(Token)'
-    FusionSetId: '$(Android_fusion_set)'
-    KeystoreFile: '$(keystore.secureFilePath)'
-    KeystorePass: 'appdome'
-    KeystoreAlias: 'appdome'
-    KeyPass: 'appdome'
+# - task: AndroidSign@0
+#   inputs:
+#     App: '$(App.secureFilePath)'
+#     Token: '$(Token)'
+#     FusionSetId: '$(Android_fusion_set)'
+#     KeystoreFile: '$(keystore.secureFilePath)'
+#     KeystorePass: 'appdome'
+#     KeystoreAlias: 'appdome'
+#     KeyPass: 'appdome'
 
 # - task: AndroidPrivateSign@0
 #   inputs:
