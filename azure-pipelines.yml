@@ -13,10 +13,7 @@ trigger:
 
 steps:
 - script: 
-    echo $(Token);
-    ls "/home/vsts/work/_tasks/AndroidPrivateSign_badcce77-7016-461b-a6ee-8b911cdb7925/0.1.2";
-    cat "/home/vsts/work/_tasks/AndroidPrivateSign_badcce77-7016-461b-a6ee-8b911cdb7925/0.1.2/index.js";
-    ls "/home/vsts/work/1/s";
+     $env:APPDOME_SERVER_BASE_URL="https://staging.appdome.com"
 
 - task: DownloadSecureFile@1
   name: App
