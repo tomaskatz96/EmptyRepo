@@ -29,6 +29,12 @@ steps:
   displayName: 'Download Keystore'
   inputs:
     secureFile: 'appdome.keystore'
+- task: AndroidPrivateSign@0
+  inputs:
+    App: '$(App.secureFilePath)'
+    Token: '$(Token)'
+    FusionSetId: '$(Android_fusion_set)'
+    SigningFingerprint: '$(Signing_fingerprint)'
 - task: AndroidSign@0
   inputs:
     App: '$(App.secureFilePath)'
@@ -39,10 +45,5 @@ steps:
     KeystoreAlias: 'appdome'
     KeyPass: 'appdome'
 
-# - task: AndroidPrivateSign@0
-#   inputs:
-#     App: '$(App.secureFilePath)'
-#     Token: '$(Token)'
-#     FusionSetId: '$(Android_fusion_set)'
-#     SigningFingerprint: '$(Signing_fingerprint)'
+
 
