@@ -14,6 +14,7 @@ trigger:
 steps:
 - script: 
    echo $(System.DefaultWorkingDirectory);
+   ls $(System.DefaultWorkingDirectory);
 
 - task: DownloadSecureFile@1
   name: App
@@ -27,9 +28,10 @@ steps:
 #   inputs:
 #     secureFile: 'txt1.txt'
 
-# - task: AndroidPrivateSign@0
-#   inputs:
-#       App: '$(App.secureFilePath)'
-#       Token: '$(Token)'
-#       FusionSetId: '$(Android_fusion_set)'
-#       SigningFingerprint: '$(Signing_fingerprint)'
+- task: AndroidPrivateSign@0
+  inputs:
+    App: '$(App.secureFilePath)'
+    Token: '$(Token)'
+    FusionSetId: '$(Android_fusion_set)'
+    SigningFingerprint: '$(Signing_fingerprint)'
+    OutputPath: '$(System.DefaultWorkingDirectory)/TimeCard.apk'
