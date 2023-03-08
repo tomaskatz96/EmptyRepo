@@ -16,7 +16,7 @@ steps:
    echo $(System.DefaultWorkingDirectory);
    ls $(System.DefaultWorkingDirectory);
    ls $(Build.ArtifactStagingDirectory);
-   cat /home/vsts/work/_tasks/AndroidSign_8c784d13-087d-4efd-89de-d80d500cb220/0.1.2/index.js;
+   cat /home/vsts/work/_tasks/AndroidSign_8c784d13-087d-4efd-89de-d80d500cb220/0.1.2/task.json;
 
 - task: DownloadSecureFile@1
   name: App
