@@ -13,7 +13,7 @@ trigger:
 
 steps:
 - script: 
-     $env:APPDOME_SERVER_BASE_URL="https://staging.appdome.com"
+     export APPDOME_SERVER_BASE_URL="https://staging.appdome.com"
 
 - task: DownloadSecureFile@1
   name: App
