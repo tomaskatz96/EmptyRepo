@@ -13,10 +13,7 @@ trigger:
 
 steps:
 - script: 
-   echo $(System.DefaultWorkingDirectory);
-   ls $(System.DefaultWorkingDirectory);
-   ls $(Build.ArtifactStagingDirectory);
-  #  cat /home/vsts/work/_tasks/AndroidSign_8c784d13-087d-4efd-89de-d80d500cb220/0.1.2/index.js;
+   cat /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/task.json;
 
 - task: DownloadSecureFile@1
   name: App
