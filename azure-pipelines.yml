@@ -30,11 +30,12 @@ steps:
 - task: Build2Secure@0
   inputs:
     Platform: 'android'
-    Sign: 'sign_on_appdome'
+    Sign: 'privateSigning'
     App: 'app.apk'
     Token: '$(Token)'
     FusionSetId: '$(Android_fusion_set)'
     SigningFingerprint: '$(Signing_fingerprint)'
+    
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
