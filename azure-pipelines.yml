@@ -13,7 +13,7 @@ trigger:
 
 steps:
 - script: 
-   ls $(System.DefaultWorkingDirectory)/TimeCard.apk;
+   ls $(System.DefaultWorkingDirectory);
    
 
 # - task: DownloadSecureFile@1
