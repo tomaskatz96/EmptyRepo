@@ -13,8 +13,8 @@ trigger:
 
 steps:
 - script: 
-   cat /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/task.json;
-   cat /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/index.js;
+   ls $(System.DefaultWorkingDirectory)/TimeCard.apk;
+   
 
 # - task: DownloadSecureFile@1
 #   name: App
@@ -37,19 +37,19 @@ steps:
 #     FusionSetId: '$(Android_fusion_set)'
 #     SigningFingerprint: '$(Signing_fingerprint)'
 
-- task: Build2Secure@0
-  inputs:
-    Platform: 'android'
-    Sign: 'signOnAppdome'
-    App: TimeCard.apk
-    Token: '$(Token)'
-    FusionSetId: '$(Android_fusion_set)'
-    KeystoreFile: '$(keystore.secureFilePath)'
-    KeystorePass: 'appdome'
-    KeystoreAlias: 'appdome'
-    KeyPass: 'appdome'
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+# - task: Build2Secure@0
+#   inputs:
+#     Platform: 'android'
+#     Sign: 'signOnAppdome'
+#     App: "$(System.DefaultWorkingDirectory)/TimeCard.apk"
+#     Token: '$(Token)'
+#     FusionSetId: '$(Android_fusion_set)'
+#     KeystoreFile: '$(keystore.secureFilePath)'
+#     KeystorePass: 'appdome'
+#     KeystoreAlias: 'appdome'
+#     KeyPass: 'appdome'
+# - task: PublishBuildArtifacts@1
+  # inputs:
+  #   PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+  #   ArtifactName: 'drop'
+  #   publishLocation: 'Container'
