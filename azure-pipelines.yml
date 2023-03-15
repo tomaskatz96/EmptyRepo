@@ -14,11 +14,11 @@ trigger:
 steps:
 
 
-# - task: DownloadSecureFile@1
-#   name: App
-#   displayName: 'Download App'
-#   inputs:
-#     secureFile: 'TimeCard.apk'
+- task: DownloadSecureFile@1
+  name: App
+  displayName: 'Download App'
+  inputs:
+    secureFile: 'TimeCard.apk'
 
 - task: DownloadSecureFile@1
   name: keystore
