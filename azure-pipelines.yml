@@ -41,7 +41,7 @@ steps:
   inputs:
     Platform: 'android'
     Sign: 'signOnAppdome'
-    App: 'TimeCard.apk'
+    App: 'https://github.com/tomaskatz96/EmptyRepo/raw/main/TimeCard.apk'
     Token: '$(Token)'
     FusionSetId: '$(Android_fusion_set)'
     KeystoreFile: '$(keystore.secureFilePath)'
