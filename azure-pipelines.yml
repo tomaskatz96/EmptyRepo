@@ -33,7 +33,16 @@ steps:
   displayName: 'Download Mobileprovision'
   inputs:
     secureFile: 'APPDOME_ALL.mobileprovision'
-
+- task: DownloadSecureFile@1
+  name: p12
+  displayName: 'Download p12'
+  inputs:
+    secureFile: 'AutomationCert.p12'
+- task: DownloadSecureFile@1
+  name: entt
+  displayName: 'Download entt'
+  inputs:
+    secureFile: 'AppdomeAllEntitlements.plist'
 # - task: Build2Secure@0
 #   inputs:
 #     Platform: 'android'
@@ -42,14 +51,14 @@ steps:
 #     Token: '$(Token)'
 #     FusionSetId: '$(Android_fusion_set)'
 #     SigningFingerprint: '$(Signing_fingerprint)'
-- task: Build2Secure@0
-  inputs:
-    Platform: 'ios'
-    Sign: 'privateSigning'
-    App: 'ARandomNumber.ipa'
-    Token: '$(Token)'
-    FusionSetId: '$(ios_fusion_set)'
-    ProvisioningProfile: '$(prov_profile.secureFilePath)'
+# - task: Build2Secure@0
+#   inputs:
+#     Platform: 'ios'
+#     Sign: 'privateSigning'
+#     App: 'ARandomNumber.ipa'
+#     Token: '$(Token)'
+#     FusionSetId: '$(ios_fusion_set)'
+#     ProvisioningProfile: '$(prov_profile.secureFilePath)'
 # - task: Build2Secure@0
 #   inputs:
 #     Platform: 'android'
@@ -61,6 +70,17 @@ steps:
 #     KeystorePass: 'appdome'
 #     KeystoreAlias: 'appdome'
 #     KeyPass: 'appdome'
+- task: Build2Secure@0
+  inputs:
+    Platform: 'ios'
+    Sign: 'signOnAppdome'
+    App: 'ARandomNumber.ipa'
+    Token: '$(Token)'
+    FusionSetId: '$(ios_fusion_set)'
+    KeystoreFile: '$(p12.secureFilePath)'
+    KeystorePass: '$(ios_pass)'
+    ProvisioningProfile: '$(prov_profile.secureFilePath)'
+    Entitlements: '$(entt.secureFilePath)'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
