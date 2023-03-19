@@ -59,28 +59,28 @@ steps:
 #     Token: '$(Token)'
 #     FusionSetId: '$(ios_fusion_set)'
 #     ProvisioningProfile: '$(prov_profile.secureFilePath)'
-# - task: Build2Secure@0
-#   inputs:
-#     Platform: 'android'
-#     Sign: 'signOnAppdome'
-#     App: 'TimeCard.apk'
-#     Token: '$(Token)'
-#     FusionSetId: '$(Android_fusion_set)'
-#     KeystoreFile: '$(keystore.secureFilePath)'
-#     KeystorePass: 'appdome'
-#     KeystoreAlias: 'appdome'
-#     KeyPass: 'appdome'
 - task: Build2Secure@0
   inputs:
-    Platform: 'ios'
+    Platform: 'android'
     Sign: 'signOnAppdome'
-    App: 'ARandomNumber.ipa'
+    App: 'TimeCard.apk'
     Token: '$(Token)'
-    FusionSetId: '$(ios_fusion_set)'
-    KeystoreFile: '$(p12.secureFilePath)'
-    KeystorePass: '$(ios_pass)'
-    ProvisioningProfile: 'https://github.com/tomaskatz96/EmptyRepo/raw/main/prov.mobileprovision'
-    Entitlements: '$(entt.secureFilePath)'
+    FusionSetId: '$(Android_fusion_set)'
+    KeystoreFile: '$(keystore.secureFilePath)'
+    KeystorePass: 'appdome'
+    KeystoreAlias: 'appdome'
+    KeyPass: 'appdome'
+# - task: Build2Secure@0
+#   inputs:
+#     Platform: 'ios'
+#     Sign: 'signOnAppdome'
+#     App: 'ARandomNumber.ipa'
+#     Token: '$(Token)'
+#     FusionSetId: '$(ios_fusion_set)'
+#     KeystoreFile: '$(p12.secureFilePath)'
+#     KeystorePass: '$(ios_pass)'
+#     ProvisioningProfile: 'https://github.com/tomaskatz96/EmptyRepo/raw/main/prov.mobileprovision'
+#     Entitlements: '$(entt.secureFilePath)'
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
