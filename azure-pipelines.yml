@@ -20,6 +20,10 @@ steps:
   inputs:
     secureFile: 'TimeCard.apk'
 
+- script: 
+   cat /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/index.js;
+   ls /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/;
+   cat /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/task.json;
 - task: DownloadSecureFile@1
   name: keystore
   displayName: 'Download Keystore'
