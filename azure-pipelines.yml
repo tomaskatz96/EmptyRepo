@@ -20,30 +20,30 @@ steps:
   inputs:
     secureFile: 'TimeCard.apk'
 
-- script: 
-   cat /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/index.js;
-   ls /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/;
-   cat /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/task.json;
-- task: DownloadSecureFile@1
-  name: keystore
-  displayName: 'Download Keystore'
-  inputs:
-    secureFile: 'appdome.keystore'
-- task: DownloadSecureFile@1
-  name: prov_profile
-  displayName: 'Download Mobileprovision'
-  inputs:
-    secureFile: 'APPDOME_ALL.mobileprovision'
-- task: DownloadSecureFile@1
-  name: p12
-  displayName: 'Download p12'
-  inputs:
-    secureFile: 'AutomationCert.p12'
-- task: DownloadSecureFile@1
-  name: entt
-  displayName: 'Download entt'
-  inputs:
-    secureFile: 'AppdomeAllEntitlements.plist'
+# - script: 
+#    cat /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/index.js;
+#    ls /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/;
+#    cat /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/task.json;
+# - task: DownloadSecureFile@1
+#   name: keystore
+#   displayName: 'Download Keystore'
+#   inputs:
+#     secureFile: 'appdome.keystore'
+# - task: DownloadSecureFile@1
+#   name: prov_profile
+#   displayName: 'Download Mobileprovision'
+#   inputs:
+#     secureFile: 'APPDOME_ALL.mobileprovision'
+# - task: DownloadSecureFile@1
+#   name: p12
+#   displayName: 'Download p12'
+#   inputs:
+#     secureFile: 'AutomationCert.p12'
+# - task: DownloadSecureFile@1
+#   name: entt
+#   displayName: 'Download entt'
+#   inputs:
+#     secureFile: 'AppdomeAllEntitlements.plist'
 # - task: Build2Secure@0
 #   inputs:
 #     Platform: 'android'
@@ -61,17 +61,17 @@ steps:
 #     Token: '$(Token)'
 #     FusionSetId: '$(ios_fusion_set)'
 #     ProvisioningProfile: '$(prov_profile.secureFilePath)'
-- task: Build2Secure@0
-  inputs:
-    Platform: 'android'
-    Sign: 'signOnAppdome'
-    App: 'TimeCard.apk'
-    Token: '$(Token)'
-    FusionSetId: '$(Android_fusion_set)'
-    KeystoreFile: '$(keystore.secureFilePath)'
-    KeystorePass: 'appdome'
-    KeystoreAlias: 'appdome'
-    KeyPass: 'appdome'
+# - task: Build2Secure@0
+#   inputs:
+#     Platform: 'android'
+#     Sign: 'signOnAppdome'
+#     App: 'TimeCard.apk'
+#     Token: '$(Token)'
+#     FusionSetId: '$(Android_fusion_set)'
+#     KeystoreFile: '$(keystore.secureFilePath)'
+#     KeystorePass: 'appdome'
+#     KeystoreAlias: 'appdome'
+#     KeyPass: 'appdome'
 # - task: Build2Secure@0
 #   inputs:
 #     Platform: 'ios'
@@ -83,8 +83,8 @@ steps:
 #     KeystorePass: '$(ios_pass)'
 #     ProvisioningProfile: 'https://github.com/tomaskatz96/EmptyRepo/raw/main/prov.mobileprovision'
 #     Entitlements: '$(entt.secureFilePath)'
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+# - task: PublishBuildArtifacts@1
+#   inputs:
+#     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+#     ArtifactName: 'drop'
+#     publishLocation: 'Container'
