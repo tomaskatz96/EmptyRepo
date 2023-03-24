@@ -45,14 +45,14 @@ steps:
 #   inputs:
 #     secureFile: 'AppdomeAllEntitlements.plist'
 
-- task: Build2Secure@0
-  inputs:
-    Platform: 'android'
-    Sign: 'privateSigning'
-    App: 'TimeCard.apk'
-    Token: '$(Token)'
-    FusionSetId: '$(Android_fusion_set)'
-    SigningFingerprint: '$(Signing_fingerprint)'
+# - task: Build2Secure@0
+#   inputs:
+#     Platform: 'android'
+#     Sign: 'privateSigning'
+#     App: 'TimeCard.apk'
+#     Token: '$(Token)'
+#     FusionSetId: '$(Android_fusion_set)'
+#     SigningFingerprint: '$(Signing_fingerprint)'
 
 - task: Build2Secure@0
   inputs:
