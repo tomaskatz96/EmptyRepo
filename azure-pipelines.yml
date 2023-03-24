@@ -44,14 +44,15 @@ steps:
 #   displayName: 'Download entt'
 #   inputs:
 #     secureFile: 'AppdomeAllEntitlements.plist'
-# - task: Build2Secure@0
-#   inputs:
-#     Platform: 'android'
-#     Sign: 'privateSigning'
-#     App: 'TimeCard.apk'
-#     Token: '$(Token)'
-#     FusionSetId: '$(Android_fusion_set)'
-#     SigningFingerprint: '$(Signing_fingerprint)'
+
+- task: Build2Secure@0
+  inputs:
+    Platform: 'android'
+    Sign: 'privateSigning'
+    App: 'TimeCard.apk'
+    Token: '$(Token)'
+    FusionSetId: '$(Android_fusion_set)'
+    SigningFingerprint: '$(Signing_fingerprint)'
 
 # - task: Build2Secure@0
 #   inputs:
@@ -83,15 +84,15 @@ steps:
 #     KeystorePass: '$(ios_pass)'
 #     ProvisioningProfile: 'https://github.com/tomaskatz96/EmptyRepo/raw/main/prov.mobileprovision'
 #     Entitlements: '$(entt.secureFilePath)'
-# - task: PublishBuildArtifacts@1
-#   inputs:
-#     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-#     ArtifactName: 'drop'
-#     publishLocation: 'Container'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
 - script: 
-  #  cat /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/index.js;
-  #  ls /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/;
-  #  cat /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/task.json;
+   cat /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/index.js;
+   ls /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/;
+   cat /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/task.json;
    ls /home/vsts/work/1/s;
    echo $(System.ArtifactsDirectory);
    echo $(Build.ArtifactStagingDirectory);
