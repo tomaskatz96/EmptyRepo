@@ -62,7 +62,7 @@ steps:
 #     Token: '$(Token)'
 #     FusionSetId: '$(Android_fusion_set)'
 #     ProvisioningProfile: '$(keystore.secureFilePath),$(keystore.secureFilePath)'
-- task: Build2Secure@0
+- task: Build-2Secure@0
   inputs:
     Platform: 'android'
     Sign: 'signOnAppdome'
