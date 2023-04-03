@@ -21,6 +21,7 @@ steps:
   displayName: 'Upload none protected application to Appdome'
 
 - script: |
+            echo $app;
             task_id=$(
               curl -s --request POST \
                 --url "https://staging.appdome.com/api/v1/tasks" \
