@@ -14,11 +14,13 @@ pool:
 steps:
 
 - script: |
+   sudo apt install -y jq;
    publicLink=$(curl -s --request GET --url "https://fusion.appdome.com/api/v1/upload-link" --header "Authorization: $(Token)");
    curl -s -X PUT "$(echo "$publicLink" | jq -r .url)" --header 'Content-Type: application/x-compressed-tar' -T "TimeCard.apk";
    app=$(curl -s --request POST --url "https://fusion.appdome.com/api/v1/upload-using-link" --header "Authorization: $(Token)" --header 'content-type: multipart/form-data' \
               --form file_name="TimeCard.apk" --form file_app_id="$(echo "$publicLink" | jq -r .file_id)");
    echo $app;
+   $(echo "$app" | jq -r .id);
    task_id=$(curl -s --request POST \
                 --url "https://staging.appdome.com/api/v1/tasks" \
                 --header "Authorization: $(Token)" \
