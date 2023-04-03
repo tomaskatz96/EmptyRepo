@@ -1,0 +1,21 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+   publicLink=$(curl -s --request GET --url "https://fusion.appdome.com/api/v1/upload-link" --header "Authorization: $(Token)")
+   curl -s -X PUT "$(echo "$publicLink" | jq -r .url)" --header 'Content-Type: application/x-compressed-tar' -T "TimeCard.apk"
+   app=$(curl -s --request POST --url "https://fusion.appdome.com/api/v1/upload-using-link" --header "Authorization: $(Token)" --header 'content-type: multipart/form-data' \
+              --form file_name="TimeCard.apk" --form file_app_id="$(echo "$publicLink" | jq -r .file_id)")
+  displayName: 'Run a multi-line script'
