@@ -87,8 +87,7 @@ steps:
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+    ArtifactName: 'Appdome Output'
 - script: 
   #  cat /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/index.js;
   #  ls /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/;
@@ -97,4 +96,3 @@ steps:
   #  echo $(System.ArtifactsDirectory);
   #  echo $(Build.ArtifactStagingDirectory);
    ls $(Build.ArtifactStagingDirectory);
-   ls /home/vsts/work/1/a;
