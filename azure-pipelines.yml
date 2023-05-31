@@ -84,11 +84,11 @@ steps:
 #     KeystorePass: '$(ios_pass)'
 #     ProvisioningProfile: 'https://github.com/tomaskatz96/EmptyRepo/raw/main/prov.mobileprovision'
 #     Entitlements: '$(entt.secureFilePath)'
-# - task: PublishBuildArtifacts@1
-#   inputs:
-#     PathtoPublish: '$(Pipeline.Workspace)'
-#     ArtifactName: 'drop'
-#     publishLocation: 'Container'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
 - script: 
   #  cat /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/index.js;
   #  ls /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/;
@@ -96,5 +96,5 @@ steps:
   #  ls /home/vsts/work/1/s;
   #  echo $(System.ArtifactsDirectory);
   #  echo $(Build.ArtifactStagingDirectory);
-  #  ls $(Build.ArtifactStagingDirectory);
    ls $(Build.ArtifactStagingDirectory);
+   ls /home/vsts/work/1/a;
