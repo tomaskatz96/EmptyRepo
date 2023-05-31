@@ -97,4 +97,4 @@ steps:
   #  echo $(System.ArtifactsDirectory);
   #  echo $(Build.ArtifactStagingDirectory);
   #  ls $(Build.ArtifactStagingDirectory);
-   echo $(Build.ArtifactStagingDirectory);
+   ls $(Build.ArtifactStagingDirectory);
