@@ -29,7 +29,7 @@ jobs:
    - name: Download artifacts
      uses: actions/download-artifact@v3
      with:
-        name: my-artifacts
+        name: workflow-artifacts
    - name: Use artifacts in next action
      run: |
        # You can access the downloaded artifacts using their relative paths
