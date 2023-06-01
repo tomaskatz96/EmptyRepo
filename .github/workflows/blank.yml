@@ -38,7 +38,8 @@ jobs:
 
        # Example command to list the contents of the artifact directory
        ls ./output/
-   - uses: actions/checkout@v3
+   - name: Clean appdome directory
+     run: rm -rf ./appdome/*
    - name: Appdome build-2secure
      uses: Appdome/github_build-2secure@1.0
      with:
