@@ -11,7 +11,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
  # This workflow contains a single job called "build"
- build:
+ a:
  # The type of runner that the job will run on
   runs-on: ubuntu-latest
  # Steps represent a sequence of tasks that will be executed as part of the job
@@ -27,9 +27,12 @@ jobs:
         SIGN_OPTIONS: "PRIVATE_SIGNING"
         APPDOME_API_TOKEN: ${{secrets.APPDOME_API_KEY}}
         SIGN_FINGERPRINT: ${{secrets.APPDOME_SIGN_FINGERPRINT}}
-
-   - name: Clean appdome directory
-     run: sudo rm -rf ./appdome/*
+ b:
+  runs-on: ubuntu-latest
+ # Steps represent a sequence of tasks that will be executed as part of the job
+  steps:
+#    - name: Clean appdome directory
+#      run: sudo rm -rf ./appdome/*
    - name: Appdome build-2secure
      uses: Appdome/github_build-2secure@1.0
      with:
