@@ -36,6 +36,8 @@ jobs:
         FILE=$(find ./output/ -type f -name "Appdome_secured_app.*" )
         echo "my_secure_app=$FILE" >> $GITHUB_OUTPUT
      shell: bash
+   - name: Clean appdome directory
+     run: sudo rm -rf ./appdome/*
    - name: Appdome build-2secure
      uses: Appdome/github_build-2secure@1.0
      with:
