@@ -33,11 +33,8 @@ jobs:
    - name: Find secure app file
      id: secure_app_file
      run: |
-        FILE=$(find ./output/ -type f -name "Appdome_secured_app.*" -exec basename {} \;)
+        FILE=$(find ./output/ -type f -name "Appdome_secured_app.*" )
         echo "my_secure_app=$FILE" >> $GITHUB_OUTPUT
-     shell: bash
-   - name: List files in output directory
-     run: echo $my_secure_app
      shell: bash
  b:
   runs-on: ubuntu-latest
