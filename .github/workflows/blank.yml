@@ -29,10 +29,12 @@ jobs:
         SIGN_FINGERPRINT: ${{secrets.APPDOME_SIGN_FINGERPRINT}}
  b:
   runs-on: ubuntu-latest
+  needs: a
  # Steps represent a sequence of tasks that will be executed as part of the job
   steps:
 #    - name: Clean appdome directory
 #      run: sudo rm -rf ./appdome/*
+   - uses: actions/checkout@v3
    - name: Appdome build-2secure
      uses: Appdome/github_build-2secure@1.0
      with:
