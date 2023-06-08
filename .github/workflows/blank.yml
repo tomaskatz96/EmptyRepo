@@ -1,45 +1,39 @@
-name: APPDOME_CI_EXAMPLE
-# Controls when the workflow will run
+name: build
+
 on:
- # Triggers the workflow on push or pull request events but only for the "main" branch
- push:
-  branches: [ "main" ]
- pull_request:
-  branches: [ "main" ]
- # Allows you to run this workflow manually from the Actions tab
- workflow_dispatch:
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
 jobs:
- # This workflow contains a single job called "build"
- a:
- # The type of runner that the job will run on
-  runs-on: ubuntu-latest
- # Steps represent a sequence of tasks that will be executed as part of the job
-  steps:
- # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-   - uses: actions/checkout@v3
-   - name: Appdome build-2secure
-     id: appdome-build
-     uses: Appdome/github_build-2secure@1.0
-     with:
-        APP_FILE: "./TimeCard.apk"
-        FUSION_SET_ID: "d5079cb0-582a-11ed-8316-eb2303a43a47"
-        SIGN_OPTIONS: "PRIVATE_SIGNING"
-        APPDOME_API_TOKEN: ${{secrets.APPDOME_API_KEY}}
-#         APPDOME_API_TOKEN: "d5079cb0-582a-11ed-8316-eb2303a43a47"
-        SIGN_FINGERPRINT: ${{secrets.APPDOME_SIGN_FINGERPRINT}}
-   - name: Find secure app file
-     id: secure_app_file
-     run: |
-        echo ${{ steps.appdome-build.outputs.my_secure_app }}
-     shell: bash
-   - name: Clean appdome directory
-     run: sudo rm -rf ./appdome/*
-   - name: Appdome build-2secure
-     uses: Appdome/github_build-2secure@1.0
-     with:
-        APP_FILE: ${{steps.appdome-build.outputs.my_secure_app}}
-        FUSION_SET_ID: "d5079cb0-582a-11ed-8316-eb2303a43a47"
-        SIGN_OPTIONS: "PRIVATE_SIGNING"
-        APPDOME_API_TOKEN: ${{secrets.APPDOME_API_KEY}}
-        SIGN_FINGERPRINT: ${{secrets.APPDOME_SIGN_FINGERPRINT}}
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Run Python unit tests
+      run: python3 -u -m unittest tests/tests.py
+
+    - name: Verify that the Docker image for the action builds
+      run: docker build . --file Dockerfile
+
+    - name: Integration test
+      id: integration
+      uses: ./
+      with:
+        input-one: something
+        input-two: true
+
+    - name: Output the outputs of the integration test of the action
+      run: |
+        echo "output-one = ${{ steps.integration.outputs.output-one }}"
+        echo "output-two = ${{ steps.integration.outputs.output-two }}"
