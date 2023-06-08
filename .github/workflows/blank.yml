@@ -31,7 +31,7 @@ jobs:
    - name: Find secure app file
      id: secure_app_file
      run: |
-        echo ${{steps.appdome-build.outputs.my_secure_app}}
+        echo ${{ steps.appdome-build.outputs.my_secure_app }}
      shell: bash
    - name: Clean appdome directory
      run: sudo rm -rf ./appdome/*
