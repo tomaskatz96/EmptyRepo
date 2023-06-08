@@ -21,6 +21,7 @@ jobs:
    - name: do something
      run: |
         cat $GITHUB_OUTPUT
+     shell: bash
    - name: Appdome build-2secure
      id: appdome-build
      uses: Appdome/github_build-2secure@1.0
