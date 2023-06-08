@@ -18,6 +18,9 @@ jobs:
   steps:
  # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
    - uses: actions/checkout@v3
+   - name: do something
+     run: |
+        echo $GITHUB_OUTPUT
    - name: Appdome build-2secure
      id: appdome-build
      uses: Appdome/github_build-2secure@1.0
