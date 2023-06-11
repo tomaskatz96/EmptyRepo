@@ -74,7 +74,7 @@ steps:
     KeystorePass: 'appdome'
     KeystoreAlias: 'appdome'
     KeyPass: 'appdome'
-    BuildWithLogs: true
+    BuildWithLogs: false
   env:
     APPDOME_SERVER_BASE_URL: 'https://qamaster.dev.appdome.com/'
 # - task: Build2Secure@0
