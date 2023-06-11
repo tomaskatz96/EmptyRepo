@@ -29,7 +29,7 @@ jobs:
 #         APPDOME_API_TOKEN: "d5079cb0-582a-11ed-8316-eb2303a43a47"
         SIGN_FINGERPRINT: ${{secrets.APPDOME_SIGN_FINGERPRINT}}
    - name: Find secure app file
-     id: secure_app_file
+     id: secure_app
      run: |
         echo ${{ steps.appdome-build.outputs.my_secure_app }}
 #      shell: bash
