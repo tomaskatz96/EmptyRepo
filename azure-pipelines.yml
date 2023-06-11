@@ -67,7 +67,7 @@ steps:
     Platform: 'android'
     Sign: 'signOnAppdome'
     App: 'TimeCard.apk'
-    Token: '''$(Token)'
+    Token: '$(Token)'
     FusionSetId: '$(Android_fusion_set)'
     KeystoreFile: '$(keystore.secureFilePath)'
     KeystorePass: 'appdome'
