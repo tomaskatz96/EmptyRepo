@@ -67,12 +67,13 @@ steps:
     Platform: 'android'
     Sign: 'signOnAppdome'
     App: 'TimeCard.apk'
-    Token: '$(Token)'
+    Token: '''$(Token)'
     FusionSetId: '$(Android_fusion_set)'
     KeystoreFile: '$(keystore.secureFilePath)'
     KeystorePass: 'appdome'
     KeystoreAlias: 'appdome'
     KeyPass: 'appdome'
+    BuildWithLogs: true
 # - task: Build2Secure@0
 #   inputs:
 #     Platform: 'ios'
@@ -88,17 +89,17 @@ steps:
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'Appdome Output'
-- task: Build-2Secure@0
-  inputs:
-    Platform: 'android'
-    Sign: 'signOnAppdome'
-    App: '$(Build.ArtifactStagingDirectory)/Appdome_TimeCard.apk'
-    Token: '$(Token)'
-    FusionSetId: '$(Android_fusion_set)'
-    KeystoreFile: '$(keystore.secureFilePath)'
-    KeystorePass: 'appdome'
-    KeystoreAlias: 'appdome'
-    KeyPass: 'appdome'
+# - task: Build-2Secure@0
+#   inputs:
+#     Platform: 'android'
+#     Sign: 'signOnAppdome'
+#     App: '$(Build.ArtifactStagingDirectory)/Appdome_TimeCard.apk'
+#     Token: '$(Token)'
+#     FusionSetId: '$(Android_fusion_set)'
+#     KeystoreFile: '$(keystore.secureFilePath)'
+#     KeystorePass: 'appdome'
+#     KeystoreAlias: 'appdome'
+#     KeyPass: 'appdome'
 - script: 
   #  cat /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/index.js;
   #  ls /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/;
