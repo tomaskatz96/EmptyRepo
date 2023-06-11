@@ -32,7 +32,7 @@ jobs:
      id: secure_app_file
      run: |
         echo ${{ steps.appdome-build.outputs.my_secure_app }}
-     shell: bash
+#      shell: bash
 #    - name: Clean appdome directory
 #      run: sudo rm -rf ./appdome/*
 #    - name: Appdome build-2secure
