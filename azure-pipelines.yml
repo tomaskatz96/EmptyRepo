@@ -74,9 +74,8 @@ steps:
     KeystorePass: 'appdome'
     KeystoreAlias: 'appdome'
     KeyPass: 'appdome'
-    BuildWithLogs: true
-  env:
-    APPDOME_SERVER_BASE_URL: 'https://qamaster.dev.appdome.com/'
+    BuildWithLogs: false
+  name: buildTask
 # - task: Build2Secure@0
 #   inputs:
 #     Platform: 'ios'
@@ -103,11 +102,6 @@ steps:
 #     KeystorePass: 'appdome'
 #     KeystoreAlias: 'appdome'
 #     KeyPass: 'appdome'
-- script: 
-  #  cat /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/index.js;
-  #  ls /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/;
-  #  cat /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/task.json;
-  #  ls /home/vsts/work/1/s;
-  #  echo $(System.ArtifactsDirectory);
-  #  echo $(Build.ArtifactStagingDirectory);
+- script: |
    ls $(Build.ArtifactStagingDirectory);
+   echo "Built APK file: $(buildTask.OutputVariable)"
