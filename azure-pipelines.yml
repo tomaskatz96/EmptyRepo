@@ -104,4 +104,4 @@ steps:
 #     KeyPass: 'appdome'
 - script: |
    ls $(Build.ArtifactStagingDirectory);
-   echo "Built APK file: $(buildTask.OutputVariable)"
+   echo "Built APK file: $(buildTask.AppdomeSecuredApp)"
