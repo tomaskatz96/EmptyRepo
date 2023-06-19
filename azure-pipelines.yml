@@ -1,108 +1,85 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
 variables:
+
 - group: Appdome
 
+
+
+
 trigger:
+
 - main
 
-# pool:
-#   vmImage: ubuntu-latest
+
+
 
 steps:
 
 
 
+
 - task: DownloadSecureFile@1
+
   name: App
+
   displayName: 'Download App'
+
   inputs:
+
     secureFile: 'TimeCard.apk'
 
-# - script: 
-#    cat /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/index.js;
-#    ls /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/;
-#    cat /home/vsts/work/_tasks/Build2Secure_0921a031-f037-4ad2-97bd-7d4abde94efa/0.1.2/task.json;
 - task: DownloadSecureFile@1
+
   name: keystore
+
   displayName: 'Download Keystore'
+
   inputs:
+
     secureFile: 'appdome.keystore'
-# - task: DownloadSecureFile@1
-#   name: prov_profile
-#   displayName: 'Download Mobileprovision'
-#   inputs:
-#     secureFile: 'APPDOME_ALL.mobileprovision'
-# - task: DownloadSecureFile@1
-#   name: p12
-#   displayName: 'Download p12'
-#   inputs:
-#     secureFile: 'AutomationCert.p12'
-# - task: DownloadSecureFile@1
-#   name: entt
-#   displayName: 'Download entt'
-#   inputs:
-#     secureFile: 'AppdomeAllEntitlements.plist'
 
-# - task: Build2Secure@0
-#   inputs:
-#     Platform: 'android'
-#     Sign: 'privateSigning'
-#     App: 'TimeCard.apk'
-#     Token: '$(Token)'
-#     FusionSetId: '$(Android_fusion_set)'
-#     SigningFingerprint: '$(Signing_fingerprint)'
 
-# - task: Build2Secure@0
-#   inputs:
-#     Platform: 'ios'
-#     Sign: 'privateSigning'
-#     App: 'ARandomNumber.ipa'
-#     Token: '$(Token)'
-#     FusionSetId: '$(Android_fusion_set)'
-#     ProvisioningProfile: '$(keystore.secureFilePath),$(keystore.secureFilePath)'
+
+
 - task: Build-2Secure@0
+
   inputs:
+
     Platform: 'android'
+
     Sign: 'signOnAppdome'
+
     App: 'TimeCard.apk'
+
     Token: '$(Token)'
+
     FusionSetId: '$(Android_fusion_set)'
+
     KeystoreFile: '$(keystore.secureFilePath)'
+
     KeystorePass: 'appdome'
+
     KeystoreAlias: 'appdome'
+
     KeyPass: 'appdome'
+
     BuildWithLogs: true
+
   name: buildTask
-# - task: Build2Secure@0
-#   inputs:
-#     Platform: 'ios'
-#     Sign: 'signOnAppdome'
-#     App: 'ARandomNumber.ipa'
-#     Token: '$(Token)'
-#     FusionSetId: '$(ios_fusion_set)'
-#     KeystoreFile: '$(p12.secureFilePath)'
-#     KeystorePass: '$(ios_pass)'
-#     ProvisioningProfile: 'https://github.com/tomaskatz96/EmptyRepo/raw/main/prov.mobileprovision'
-#     Entitlements: '$(entt.secureFilePath)'
+
+
+
+
 - task: PublishBuildArtifacts@1
+
   inputs:
+
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+
     ArtifactName: 'Appdome Output'
-# - task: Build-2Secure@0
-#   inputs:
-#     Platform: 'android'
-#     Sign: 'signOnAppdome'
-#     App: '$(buildTask.AppdomeSecuredApp)'
-#     Token: '$(Token)'
-#     FusionSetId: '$(Android_fusion_set)'
-#     KeystoreFile: '$(keystore.secureFilePath)'
-#     KeystorePass: 'appdome'
-#     KeystoreAlias: 'appdome'
-#     KeyPass: 'appdome'
-#     BuildWithLogs: true
+
+
+
+
 - script: |
-   ls $(Build.ArtifactStagingDirectory);
+
    echo "Built APK file: $(buildTask.AppdomeSecuredApp)"
