@@ -24,15 +24,15 @@ steps:
 
     secureFile: 'TimeCard.apk'
 
-- task: DownloadSecureFile@1
+# - task: DownloadSecureFile@1
 
-  name: keystore
+#   name: keystore
 
-  displayName: 'Download Keystore'
+#   displayName: 'Download Keystore'
 
-  inputs:
+#   inputs:
 
-    secureFile: 'appdom e.keystore'
+#     secureFile: 'appdom e.keystore'
 
 
 
@@ -56,7 +56,7 @@ steps:
 
     KeystorePass: 'appdome'
 
-    KeystoreAlias: 'appdom'
+    KeystoreAlias: 'appdome'
 
     KeyPass: 'appdome'
 
