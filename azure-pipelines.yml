@@ -56,7 +56,7 @@ steps:
 
     KeystorePass: 'appdome'
 
-    KeystoreAlias: 'appdome'
+    KeystoreAlias: 'appdom'
 
     KeyPass: 'appdome'
 
