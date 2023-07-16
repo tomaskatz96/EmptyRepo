@@ -69,10 +69,11 @@ steps:
 
     KeyPass: 'Appdome2Sign#'
 
+    TeamId: '82ad8de0-23bc-11ee-a89e-93318e80f6c9'
+
     BuildWithLogs: true
 
   name: buildTask
-
 
 
 
