@@ -45,37 +45,50 @@ steps:
     secureFile: 'AppdomeLabs-Android-Signing.jks'
 
 
+# - task: Build-2Secure@0
+
+#   inputs:
+
+#     Platform: 'android'
+
+#     Sign: 'signOnAppdome'
+
+#     # App: 'TimeCard.apk'
+#     App: https://appdome-automation-vanilla-apps.s3.eu-central-1.amazonaws.com/Thomas/app-uat-release.aab?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDGV1LWNlbnRyYWwtMSJIMEYCIQDdhh%2FOcW%2BViAlGn%2BEmLu2KdJ%2BTtxaO8SRV4S6dnp%2FXsAIhAKhOGbGVCMamSVevcRF0XCFZccIrdS3QnjdBkJx4edLkKoEDCEEQABoMMzAyMjY3NjU0Mzk0IgxFmIOrVEmSXIbsqZAq3gL62GV1O5tPXt%2BbVQFtsbGA8tLHQl7RHptR4ZPJAFrWag2dIU4RRC%2BYNav7zdQWZ4KzI9Efsisy8j1WsiTE4xi02YEsqSfluSB4O3WzsAZ9zEqVYW7XVg6CGmF8IWyIsW39FNHCcLvNuHSUS9qUwNgbcS1pa1vsLn0MVO%2B3EQnU9g3rzpFG9DYHNIwq29dBg6hbXInnKS8tEu%2BGPWVlP%2BCEhIeFglow8xTKEyw%2F1hF3vZ4%2FRU9fSwdW19GGjFP7UQ5EdTztszzjaCPLeeS3Va7qkxgcTd2yqICWz8yHp9vUegT9Vf98cG6LhuRynqZ3UW%2B9ozdKNgsrf%2F%2FKXJ3QpU4aq4lTHayHhEqmOre8QKL8cEl%2B3Dr1KnLAtky4Vn7OWeCKMVaHTqfoWDmGVjxleI8suc0IxmjmIYR3wQxh3jmbe1EZcNvpcEBsEbUjQnEptjqnbCwP4zXoW7rkKTgWeTCgvs6lBjqyAjP8Ilzn%2Be00X4Dfw%2FL7TuYm0byKGaFLWh%2FlGq4%2Fd00oN%2BDxHPlduXIWvOmftIB61LeoSje7ytFVe34WC9qo%2Fc1nRxTHFfnlnOe9wAEhDIp9EgPPfLxiWacEAv74lDwdtvfdfS5e%2BUDgwbPYb4aQZGmAXdLsjY5LUfj7ZFGYfIqehODgQKPOK0NWxMyxEKNMz61K8mRovIaBeXpkUlawph%2Fmg6QRmTcIKmJ1mEoAa35k2s3qEEF2GmBrACFZxRyowh1U5ZH0Jg729nCy54k3wDMPj2V6HeUW%2BtqOMAtgfJs3R7RqHpcCq7bIgjSxmV5bqajoGcUATLneclbpmdqHJrG56EwWKIJVh0gG2yt7ft4u2K9EM0Bx9%2FRJXf3B4JSz5G7Xvm9Ir52qmaus%2FgAeK5hp1w%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230716T125038Z&X-Amz-SignedHeaders=host&X-Amz-Expires=10800&X-Amz-Credential=ASIAUMYEOMD5GYUBZD6D%2F20230716%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Signature=4b85a4bdc7372d97bb7b92559690f5b58b2a5f2be400e1743559e7596f9e06eb
+
+#     Token: '$(Token)'
+
+#     FusionSetId: '$(Android_fusion_set)'
+#     # FusionSetId: '777'
+
+#     KeystoreFile: '$(keystore.secureFilePath)'
+
+#     KeystorePass: 'Appdome2Sign#'
+
+#     KeystoreAlias: 'appdome'
+
+#     KeyPass: 'Appdome2Sign#'
+
+#     TeamId: '82ad8de0-23bc-11ee-a89e-93318e80f6c9'
+
+#     BuildWithLogs: true
+
+#   name: buildTask
+
 - task: Build-2Secure@0
-
   inputs:
-
     Platform: 'android'
-
     Sign: 'signOnAppdome'
-
-    # App: 'TimeCard.apk'
-    App: "https://appdome-automation-vanilla-apps.s3.eu-central-1.amazonaws.com/Thomas/app-uat-release.aab?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDGV1LWNlbnRyYWwtMSJIMEYCIQDdhh%2FOcW%2BViAlGn%2BEmLu2KdJ%2BTtxaO8SRV4S6dnp%2FXsAIhAKhOGbGVCMamSVevcRF0XCFZccIrdS3QnjdBkJx4edLkKoEDCEEQABoMMzAyMjY3NjU0Mzk0IgxFmIOrVEmSXIbsqZAq3gL62GV1O5tPXt%2BbVQFtsbGA8tLHQl7RHptR4ZPJAFrWag2dIU4RRC%2BYNav7zdQWZ4KzI9Efsisy8j1WsiTE4xi02YEsqSfluSB4O3WzsAZ9zEqVYW7XVg6CGmF8IWyIsW39FNHCcLvNuHSUS9qUwNgbcS1pa1vsLn0MVO%2B3EQnU9g3rzpFG9DYHNIwq29dBg6hbXInnKS8tEu%2BGPWVlP%2BCEhIeFglow8xTKEyw%2F1hF3vZ4%2FRU9fSwdW19GGjFP7UQ5EdTztszzjaCPLeeS3Va7qkxgcTd2yqICWz8yHp9vUegT9Vf98cG6LhuRynqZ3UW%2B9ozdKNgsrf%2F%2FKXJ3QpU4aq4lTHayHhEqmOre8QKL8cEl%2B3Dr1KnLAtky4Vn7OWeCKMVaHTqfoWDmGVjxleI8suc0IxmjmIYR3wQxh3jmbe1EZcNvpcEBsEbUjQnEptjqnbCwP4zXoW7rkKTgWeTCgvs6lBjqyAjP8Ilzn%2Be00X4Dfw%2FL7TuYm0byKGaFLWh%2FlGq4%2Fd00oN%2BDxHPlduXIWvOmftIB61LeoSje7ytFVe34WC9qo%2Fc1nRxTHFfnlnOe9wAEhDIp9EgPPfLxiWacEAv74lDwdtvfdfS5e%2BUDgwbPYb4aQZGmAXdLsjY5LUfj7ZFGYfIqehODgQKPOK0NWxMyxEKNMz61K8mRovIaBeXpkUlawph%2Fmg6QRmTcIKmJ1mEoAa35k2s3qEEF2GmBrACFZxRyowh1U5ZH0Jg729nCy54k3wDMPj2V6HeUW%2BtqOMAtgfJs3R7RqHpcCq7bIgjSxmV5bqajoGcUATLneclbpmdqHJrG56EwWKIJVh0gG2yt7ft4u2K9EM0Bx9%2FRJXf3B4JSz5G7Xvm9Ir52qmaus%2FgAeK5hp1w%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230716T074149Z&X-Amz-SignedHeaders=host&X-Amz-Expires=10800&X-Amz-Credential=ASIAUMYEOMD5GYUBZD6D%2F20230716%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Signature=7a759946b3184a3ac8112d99e741c83ffeaed6ef9be9839501e1daf1d75096d3"
-
+    App: 'https://appdome-automation-vanilla-apps.s3.eu-central-1.amazonaws.com/Thomas/app-uat-release.aab?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDGV1LWNlbnRyYWwtMSJIMEYCIQDdhh%2FOcW%2BViAlGn%2BEmLu2KdJ%2BTtxaO8SRV4S6dnp%2FXsAIhAKhOGbGVCMamSVevcRF0XCFZccIrdS3QnjdBkJx4edLkKoEDCEEQABoMMzAyMjY3NjU0Mzk0IgxFmIOrVEmSXIbsqZAq3gL62GV1O5tPXt%2BbVQFtsbGA8tLHQl7RHptR4ZPJAFrWag2dIU4RRC%2BYNav7zdQWZ4KzI9Efsisy8j1WsiTE4xi02YEsqSfluSB4O3WzsAZ9zEqVYW7XVg6CGmF8IWyIsW39FNHCcLvNuHSUS9qUwNgbcS1pa1vsLn0MVO%2B3EQnU9g3rzpFG9DYHNIwq29dBg6hbXInnKS8tEu%2BGPWVlP%2BCEhIeFglow8xTKEyw%2F1hF3vZ4%2FRU9fSwdW19GGjFP7UQ5EdTztszzjaCPLeeS3Va7qkxgcTd2yqICWz8yHp9vUegT9Vf98cG6LhuRynqZ3UW%2B9ozdKNgsrf%2F%2FKXJ3QpU4aq4lTHayHhEqmOre8QKL8cEl%2B3Dr1KnLAtky4Vn7OWeCKMVaHTqfoWDmGVjxleI8suc0IxmjmIYR3wQxh3jmbe1EZcNvpcEBsEbUjQnEptjqnbCwP4zXoW7rkKTgWeTCgvs6lBjqyAjP8Ilzn%2Be00X4Dfw%2FL7TuYm0byKGaFLWh%2FlGq4%2Fd00oN%2BDxHPlduXIWvOmftIB61LeoSje7ytFVe34WC9qo%2Fc1nRxTHFfnlnOe9wAEhDIp9EgPPfLxiWacEAv74lDwdtvfdfS5e%2BUDgwbPYb4aQZGmAXdLsjY5LUfj7ZFGYfIqehODgQKPOK0NWxMyxEKNMz61K8mRovIaBeXpkUlawph%2Fmg6QRmTcIKmJ1mEoAa35k2s3qEEF2GmBrACFZxRyowh1U5ZH0Jg729nCy54k3wDMPj2V6HeUW%2BtqOMAtgfJs3R7RqHpcCq7bIgjSxmV5bqajoGcUATLneclbpmdqHJrG56EwWKIJVh0gG2yt7ft4u2K9EM0Bx9%2FRJXf3B4JSz5G7Xvm9Ir52qmaus%2FgAeK5hp1w%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230716T125038Z&X-Amz-SignedHeaders=host&X-Amz-Expires=10800&X-Amz-Credential=ASIAUMYEOMD5GYUBZD6D%2F20230716%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Signature=4b85a4bdc7372d97bb7b92559690f5b58b2a5f2be400e1743559e7596f9e06eb'
     Token: '$(Token)'
-
     FusionSetId: '$(Android_fusion_set)'
-    # FusionSetId: '777'
-
-    KeystoreFile: '$(keystore.secureFilePath)'
-
-    KeystorePass: 'Appdome2Sign#'
-
-    KeystoreAlias: 'appdome'
-
-    KeyPass: 'Appdome2Sign#'
-
     TeamId: '82ad8de0-23bc-11ee-a89e-93318e80f6c9'
-
-    BuildWithLogs: true
-
+    KeystoreFile: '$(keystore.secureFilePath)'
+    KeystorePass: 'Appdome2Sign#'
+    KeystoreAlias: 'appdome'
+    KeyPass: 'Appdome2Sign#'
+    BuildToTest: 'bitbar'
   name: buildTask
-
-
 
 - task: PublishBuildArtifacts@1
 
