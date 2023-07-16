@@ -32,7 +32,7 @@ steps:
 
   inputs:
 
-    secureFile: 'appdome.keystore'
+    secureFile: 'appdom e.keystore'
 
 
 
@@ -49,8 +49,8 @@ steps:
 
     Token: '$(Token)'
 
-    # FusionSetId: '$(Android_fusion_set)'
-    FusionSetId: '777'
+    FusionSetId: '$(Android_fusion_set)'
+    # FusionSetId: '777'
 
     KeystoreFile: '$(keystore.secureFilePath)'
 
