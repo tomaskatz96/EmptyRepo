@@ -75,21 +75,6 @@ steps:
 
 #   name: buildTask
 
-- task: Build-2Secure@0
-  inputs:
-    Platform: 'android'
-    Sign: 'signOnAppdome'
-    App: 'TimeCard.apk'
-    Token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZjljZDI4MTAtYzZjZC0xMWVjLWIzMzItY2ZhZTRiMmFjNmFkIiwic2FsdCI6IjcxNjdlYTI4LWYwODgtNGIxYi1hMGYwLTk0MzQ2Yzg2MWE0MiJ9.Q2X-XH9LrFtzJgtMnRX7z_9Fo0bqHpu3KF6bVAAei5g'
-    FusionSetId: 'e1bf3320-23de-11ee-a1be-5f4747520ad9'
-    TeamId: '08a5e0b0-1fe3-11ee-b50e-87fa8d9b6df7'
-    KeystoreFile: '$(keystore.secureFilePath)'
-    KeystorePass: 'Appdome2Sign#'
-    KeystoreAlias: 'appdome'
-    KeyPass: 'Appdome2Sign#'
-    BuildWithLogs: true
-    BuildToTest: 'saucelabs'
-  name: buildTask
 - task: PublishBuildArtifacts@1
 
   inputs:
