@@ -24,6 +24,16 @@ steps:
 
     secureFile: 'TimeCard.apk'
 
+# - task: DownloadSecureFile@1
+
+#   name: keystore
+
+#   displayName: 'Download Keystore'
+
+#   inputs:
+
+#     secureFile: 'appdome.keystore'
+
 - task: DownloadSecureFile@1
 
   name: keystore
@@ -32,9 +42,7 @@ steps:
 
   inputs:
 
-    secureFile: 'appdome.keystore'
-
-
+    secureFile: 'AppdomeLabs-Android-Signing.jks'
 
 
 - task: Build-2Secure@0
@@ -55,11 +63,11 @@ steps:
 
     KeystoreFile: '$(keystore.secureFilePath)'
 
-    KeystorePass: 'appdome'
+    KeystorePass: 'Appdome2Sign#'
 
     KeystoreAlias: 'appdome'
 
-    KeyPass: 'appdome'
+    KeyPass: 'Appdome2Sign#'
 
     BuildWithLogs: true
 
