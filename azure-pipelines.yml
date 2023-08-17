@@ -41,7 +41,7 @@ steps:
 
 #     secureFile: 'AppdomeLabs-Android-Signing.jks'
 
-- task: Build-2Secure-Test@0
+- task: Build-2Secure@0
   inputs:
     Platform: 'android'
     Sign: 'signOnAppdome'
