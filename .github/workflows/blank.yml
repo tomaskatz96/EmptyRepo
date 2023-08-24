@@ -16,29 +16,20 @@ jobs:
   runs-on: ubuntu-latest
  # Steps represent a sequence of tasks that will be executed as part of the job
   steps:
- # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-   # - uses: actions/checkout@v3
-   # - name: Appdome build-2secure
-   #   id: appdome-build
-   #   uses: Appdome/github_build-2secure@1.1.1
-   #   with:
-   #      APP_FILE: "./TimeCard.apk"
-   #      FUSION_SET_ID:  ${{secrets.APPDOME_FUSION_SET}}
-   #      SIGN_OPTIONS: "PRIVATE_SIGNING"
-   #      APPDOME_API_TOKEN: ${{secrets.APPDOME_API_KEY}}
-   #      SIGN_FINGERPRINT: ${{secrets.APPDOME_SIGN_FINGERPRINT}}
-   #      BUILD_WITH_LOGS: true
    - uses: actions/checkout@v3
    - name: Appdome build-2secure
      id: appdome-build
      uses: Appdome/github_build-2secure@1.1.1
      with:
        # Appdome API key
-       APPDOME_API_TOKEN: ${{secrets.APPDOME_API_KEY}}
-       APP_FILE: "./TimeCard.apk"
-       FUSION_SET_ID: ${{secrets.APPDOME_FUSION_SET}}
-       SIGN_OPTIONS: "PRIVATE_SIGNING"
-       SIGN_FINGERPRINT: ${{secrets.APPDOME_SIGN_FINGERPRINT}}
+          APP_FILE: "https://appdome-automation-vanilla-apps.s3.eu-central-1.amazonaws.com/Thomas/FileFinder.aab?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGEaDGV1LWNlbnRyYWwtMSJIMEYCIQDLm5nXn8YnTZtWqCdafw8uwQSrtTg7JB1xxWcT8YGTUgIhALSeyr6%2BXntq0VlYB9oLNPn9M977XYB76aiAnmvxxDBxKoEDCCoQABoMMzAyMjY3NjU0Mzk0Igz7STEw7e9qpnrFopYq3gJUSZZocqThjvpEfcaijFglh1vhEKx0FadG%2BXgokngzwhBWckpGAwML6BFA%2BU5eNR4SDwRegyMW4OWFwCjlQ2dCwrOV0ub%2FAndaq%2FmFo4S2nSrY3RiYWxTXwLv8O4BSPy13KQCznfnczbnzUw7KPmh%2F7ovdecawaqFahLNLXDsGiaS76pY%2BddPVv429yfFSYoH9YDw5J0iuI6qVN7pv1DIxfPImf1BqV8A5TPylV9rACOWwIc8PaG5Ahz%2BvUl4Kx33qXkVtpSITwhgsY3uKCwvqix6ZMQ1yBYZf7DCOpskfwR9pWKNEs5mQ2gbpOEdUHydHQbfdGgqIBJ%2FXYF0F2khmpUnGXz6ctODPZ1mkYZ%2BvoqjDgWE6DHJDnhM6pGAmSWzgoi1uZwDBrEPs2lDZJqjPf%2BzzTywr3fMiy3XZOyYg1FnryAcZKlqD2%2BHj%2FFZY0PVe9JI%2F3DbpB8NOL4WuqzCkt5ynBjqyAnwcZL20dzmFwuNr3aoLRS5qRx9ZOHAbIKbBqQddDICnWLDv%2FBMoCy19BcV7f0cmNN8lf6kOdG04dnrefzbI%2BodRv7wlKZFFqczMHEd294FSH%2F5Vh76PPtUzF6hxho8g%2FdwEGcHMDC9GdLcDr%2BeE6QUfhhXWqEENFBW0RGvp2v4G3SyaEEos85rBZqingZHrgnlOTNcx19V80vp8dnm1uhnIqB1lEqAGhnQVQxxKI29bfWSb0OrKp2yVAmycUSgOwv1lz8%2FBIYQXO%2FgwTbKhMnRLre7bdfffdS%2FAlFtZHupMoA%2Fr2L1hCIugL5E5t9eJXeJWo4aN3mQ8z60GBXcBgOxuisU107XE97S4IKeeJM1Mn7Qaq4s1uB3pnA4XzH%2FlMFwh%2BAivNYxVlvsZqWrrndJtqA%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230824T090255Z&X-Amz-SignedHeaders=host&X-Amz-Expires=7200&X-Amz-Credential=ASIAUMYEOMD5CRMH6ULM%2F20230824%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Signature=84d126e7f703695e16e62065e771c9228592cf72164b86e1d8517e30a7f7dede"
+          FUSION_SET_ID: "9046d4c0-0eb3-11ee-9fcc-654a3d56bb5a"
+          SIGN_OPTIONS: "SIGN_ON_APPDOME"
+          APPDOME_API_TOKEN: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZjE2NjQ3MTAtYzZjZC0xMWVjLWE3ZjYtMTNkN2MzZmY4NjczIiwic2FsdCI6IjVlN2M0OTYxLWY5MTItNDMwYi05NGJmLTg3MmRlNmEzYzk5MSJ9.9Yn-_ZOXVDHC4j3WKqt-Dz_gxnB0Fkq7_FJWkXmDwPA"
+          KEYSTORE_FILE: "https://appdome-automation-vanilla-apps.s3.eu-central-1.amazonaws.com/Thomas/appdome.keystore?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGEaDGV1LWNlbnRyYWwtMSJIMEYCIQDLm5nXn8YnTZtWqCdafw8uwQSrtTg7JB1xxWcT8YGTUgIhALSeyr6%2BXntq0VlYB9oLNPn9M977XYB76aiAnmvxxDBxKoEDCCoQABoMMzAyMjY3NjU0Mzk0Igz7STEw7e9qpnrFopYq3gJUSZZocqThjvpEfcaijFglh1vhEKx0FadG%2BXgokngzwhBWckpGAwML6BFA%2BU5eNR4SDwRegyMW4OWFwCjlQ2dCwrOV0ub%2FAndaq%2FmFo4S2nSrY3RiYWxTXwLv8O4BSPy13KQCznfnczbnzUw7KPmh%2F7ovdecawaqFahLNLXDsGiaS76pY%2BddPVv429yfFSYoH9YDw5J0iuI6qVN7pv1DIxfPImf1BqV8A5TPylV9rACOWwIc8PaG5Ahz%2BvUl4Kx33qXkVtpSITwhgsY3uKCwvqix6ZMQ1yBYZf7DCOpskfwR9pWKNEs5mQ2gbpOEdUHydHQbfdGgqIBJ%2FXYF0F2khmpUnGXz6ctODPZ1mkYZ%2BvoqjDgWE6DHJDnhM6pGAmSWzgoi1uZwDBrEPs2lDZJqjPf%2BzzTywr3fMiy3XZOyYg1FnryAcZKlqD2%2BHj%2FFZY0PVe9JI%2F3DbpB8NOL4WuqzCkt5ynBjqyAnwcZL20dzmFwuNr3aoLRS5qRx9ZOHAbIKbBqQddDICnWLDv%2FBMoCy19BcV7f0cmNN8lf6kOdG04dnrefzbI%2BodRv7wlKZFFqczMHEd294FSH%2F5Vh76PPtUzF6hxho8g%2FdwEGcHMDC9GdLcDr%2BeE6QUfhhXWqEENFBW0RGvp2v4G3SyaEEos85rBZqingZHrgnlOTNcx19V80vp8dnm1uhnIqB1lEqAGhnQVQxxKI29bfWSb0OrKp2yVAmycUSgOwv1lz8%2FBIYQXO%2FgwTbKhMnRLre7bdfffdS%2FAlFtZHupMoA%2Fr2L1hCIugL5E5t9eJXeJWo4aN3mQ8z60GBXcBgOxuisU107XE97S4IKeeJM1Mn7Qaq4s1uB3pnA4XzH%2FlMFwh%2BAivNYxVlvsZqWrrndJtqA%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20230824T085852Z&X-Amz-SignedHeaders=host&X-Amz-Expires=10800&X-Amz-Credential=ASIAUMYEOMD5CRMH6ULM%2F20230824%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Signature=2309d89ae3e993adb4da9bbc91167870f0ed9909b631c0fe8b57615cda1986ed"
+          KEYSTORE_PASSWORD: "appdome"
+          KEYSTORE_ALIAS: "appdome"
+          KEYSTORE_KEY_PASSWORD: "appdome"
 
 
    - name: Example of using Appdome secured app
