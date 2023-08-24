@@ -20,7 +20,7 @@ jobs:
    - uses: actions/checkout@v3
    - name: Appdome build-2secure
      id: appdome-build
-     uses: Appdome/github_build-2secure@1.0
+     uses: Appdome/github_build-2secure@1.1.1
      with:
         APP_FILE: "./TimeCard.apk"
         FUSION_SET_ID:  ${{secrets.APPDOME_FUSION_SET}}
