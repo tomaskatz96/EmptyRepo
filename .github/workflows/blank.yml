@@ -18,7 +18,6 @@ jobs:
   steps:
    - uses: actions/checkout@v3
    - name: Appdome build-2secure
-     id: appdome-build
      uses: Appdome/github_build-2secure@1.1.3
      with:
        # Appdome API key
