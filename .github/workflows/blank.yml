@@ -17,17 +17,30 @@ jobs:
  # Steps represent a sequence of tasks that will be executed as part of the job
   steps:
  # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-   - uses: actions/checkout@v3
+   # - uses: actions/checkout@v3
+   # - name: Appdome build-2secure
+   #   id: appdome-build
+   #   uses: Appdome/github_build-2secure@1.1.1
+   #   with:
+   #      APP_FILE: "./TimeCard.apk"
+   #      FUSION_SET_ID:  ${{secrets.APPDOME_FUSION_SET}}
+   #      SIGN_OPTIONS: "PRIVATE_SIGNING"
+   #      APPDOME_API_TOKEN: ${{secrets.APPDOME_API_KEY}}
+   #      SIGN_FINGERPRINT: ${{secrets.APPDOME_SIGN_FINGERPRINT}}
+   #      BUILD_WITH_LOGS: true
    - name: Appdome build-2secure
-     id: appdome-build
-     uses: Appdome/github_build-2secure@1.1.1
+  # You may pin to the exact commit or the version.
+  # uses: Appdome/github_build-2secure@9988e9b5ef64b8fbfbec7262dfa310be1165826d
+   - uses: Appdome/github_build-2secure@1.1.2
      with:
-        APP_FILE: "./TimeCard.apk"
-        FUSION_SET_ID:  ${{secrets.APPDOME_FUSION_SET}}
-        SIGN_OPTIONS: "PRIVATE_SIGNING"
-        APPDOME_API_TOKEN: ${{secrets.APPDOME_API_KEY}}
-        SIGN_FINGERPRINT: ${{secrets.APPDOME_SIGN_FINGERPRINT}}
-        BUILD_WITH_LOGS: true
+       # Appdome API key
+       APPDOME_API_TOKEN: ${{secrets.APPDOME_API_KEY}}
+       APP_FILE: "./TimeCard.apk"
+       FUSION_SET_ID: ${{secrets.APPDOME_FUSION_SET}}
+       SIGN_OPTIONS: "PRIVATE_SIGNING"
+       SIGN_FINGERPRINT: ${{secrets.APPDOME_SIGN_FINGERPRINT}}
+
+
    - name: Example of using Appdome secured app
      run: |
         echo ${{ env.APPDOME_SECURED_APP }}
