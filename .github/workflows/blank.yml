@@ -31,7 +31,7 @@ jobs:
    - name: Appdome build-2secure
   # You may pin to the exact commit or the version.
   # uses: Appdome/github_build-2secure@9988e9b5ef64b8fbfbec7262dfa310be1165826d
-   - uses: Appdome/github_build-2secure@1.1.2
+   - uses: Appdome/github_build-2secure@1.1.1
      with:
        # Appdome API key
        APPDOME_API_TOKEN: ${{secrets.APPDOME_API_KEY}}
