@@ -21,7 +21,7 @@ jobs:
      uses: Appdome/github_build-2secure@1.1.4
      with:
        # Appdome API key
-          APP_FILE: "https://github.com/tomaskatz96/EmptyRepo/raw/main/TimeCard.apk"
+          APP_FILE: "TimeCard.apk"
           FUSION_SET_ID: "9046d4c0-0eb3-11ee-9fcc-654a3d56bb5a"
           SIGN_OPTIONS: "PRIVATE_SIGNING"
           APPDOME_API_TOKEN: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZjE2NjQ3MTAtYzZjZC0xMWVjLWE3ZjYtMTNkN2MzZmY4NjczIiwic2FsdCI6IjVlN2M0OTYxLWY5MTItNDMwYi05NGJmLTg3MmRlNmEzYzk5MSJ9.9Yn-_ZOXVDHC4j3WKqt-Dz_gxnB0Fkq7_FJWkXmDwPA"
