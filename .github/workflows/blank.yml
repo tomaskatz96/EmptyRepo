@@ -21,14 +21,14 @@ jobs:
      uses: Appdome/github_build-2secure@latest
      with:
        # Appdome API key
-          APP_FILE: "TimeCard.apk"
+          APP_FILE: "https://appdome-automation-vanilla-apps.s3.eu-central-1.amazonaws.com/Thomas/FileFinder.aab?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGgaDGV1LWNlbnRyYWwtMSJHMEUCIQCSsPS4wLtQLKCMD0WpB0ooqmJF32smhSSifLp%2Bp4BwmAIgFbO0JBYtmqQ04UFcMNL9MG%2BTVEb%2Fjgmw3yQm6I4uebUqigMIkf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgwzMDIyNjc2NTQzOTQiDMI9fhEvIYQ363%2FAISreAoXjAhd4gsAddCYv%2F%2FCnL87YjAoZvmCGEGKZ0hurl7HWy2yuMYt3mgSFXKer%2BIwKXEI3bDZ0rOVHdFZujayWfAcF05ukVddX3tLoz3%2BcvoJgEiV9NXd%2FV6OTpJQH60%2FeOA07kEmfwmWlj5CB1k%2BcJxgG9FDRQtrrBqoJGvturLEBQjIGKsUx3lLAACX7LNwrOScsa4nKeE1TStNv3LTRSMxVtS8vN1sOUJcgEpuYmCV3xYS3NRW9BbN7dl2kGJybYA5uppy%2BnGXtG%2BHMF%2BdKuD3vbT%2F8S3%2BGjwrvMS3yxWoXGqyYz4Q93r%2F7psmcwvo8vlvrkoDnjik%2BEUYJIkksqFGhJXFs5hregf4%2FMlX%2FexsktrFn2UcrxjALbYeCcyRC1r%2FlDhOStLFqT6A%2FppGRDzjOBpWDp6Yts5QmmEUYOgB4KtInlQT3osyr1ARpsJ6KpULxa2KO3WqKQSXpcAFXMO2676kGOrMClWvzMfOb4IoTVEVIDNDGwaPH4YimvTyD3bHF1Q7jPjEUAvVwIM2GA5IiSSFNjjGcFufgImBh1LKIZNc4ietf5Bj81yIwPs5wKLps5I74bTuw1NSdZaYYHzC9QF5wn3MprW363C%2BdjjnSUuvsIiUIbkO6%2BXBU6FMDxK5islSNC4RTQEZjVnpRz1oRlAvh8CnrdU0kbq%2FVdabddHGCfaR5h1mIKnXPQgzQmX1AJv4PBwvS6fGqO8WVE%2B2ur1CspMFLOAIQ5s0jMHVUZ2FipLL6LbgX9rn7R%2FmRQ3Tnex5tVJzFfdJlDRteBGwMTfQ1yJmj9JbbI72sVztqe70OgGAM47OlkHdrH3E%2Bua%2Flov9rwRmHRB8albKam22HfXfAwuSKddt%2B2vIrSITQp574wftjniQaSg%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20231027T155536Z&X-Amz-SignedHeaders=host&X-Amz-Expires=10800&X-Amz-Credential=ASIAUMYEOMD5FIK5CZ57%2F20231027%2Feu-central-1%2Fs3%2Faws4_request&X-Amz-Signature=23c8a3a40d2ff258f7e2d26b46afa229e958d529186baa8a70296c611f6ec8c0"
           FUSION_SET_ID: "9046d4c0-0eb3-11ee-9fcc-654a3d56bb5a"
           SIGN_OPTIONS: "PRIVATE_SIGNING"
           APPDOME_API_TOKEN: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZjE2NjQ3MTAtYzZjZC0xMWVjLWE3ZjYtMTNkN2MzZmY4NjczIiwic2FsdCI6IjVlN2M0OTYxLWY5MTItNDMwYi05NGJmLTg3MmRlNmEzYzk5MSJ9.9Yn-_ZOXVDHC4j3WKqt-Dz_gxnB0Fkq7_FJWkXmDwPA"
           SIGN_FINGERPRINT: ${{secrets.APPDOME_SIGN_FINGERPRINT}}
-          OUTPUT_APP_NAME: app-production-release.apk
+          OUTPUT_APP_NAME: app-production-release.aab
 
    - name: Example of using Appdome secured app
      run: |
         echo ${{ env.APPDOME_SECURED_APP }}
-        mv $APPDOME_SECURED_APP ./app-mobile/android/app-production-release.apk
+        mv $APPDOME_SECURED_APP ./app-mobile/android/app-production-release.aab
