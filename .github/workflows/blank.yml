@@ -31,3 +31,4 @@ jobs:
    - name: Example of using Appdome secured app
      run: |
         echo ${{ env.APPDOME_SECURED_APP }}
+        mv $APPDOME_SECURED_APP ./app-mobile/android/app-production-release.apk
