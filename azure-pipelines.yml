@@ -55,6 +55,7 @@ steps:
     KeyPass: 'appdome'
     SecondOutput: true
     OutputFileName: "My_App_for_testing"
+    BuildToTest: None
   name: buildTask
 
 
